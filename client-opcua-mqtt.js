@@ -4,8 +4,9 @@ const fs = require("fs");
 const path = require("path");
 require('dotenv').config(); // Cargar variables de entorno desde el archivo .env
 
-// Leer los mappings desde el archivo JSON
-const mappings = JSON.parse(fs.readFileSync(path.join(__dirname, 'mappings.json'), 'utf8'));
+// Leer los mappings desde el archivo JSON usando la ruta del archivo de mapeo desde .env
+const mappingsFilePath = path.join(__dirname, process.env.MAPPINGS_FILE_PATH);
+const mappings = JSON.parse(fs.readFileSync(mappingsFilePath, 'utf8'));
 
 // URL del servidor OPC UA y del broker MQTT desde el archivo .env
 const endpointUrl = process.env.OPCUA_ENDPOINT_URL;
