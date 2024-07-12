@@ -1,14 +1,14 @@
-Cliente OPC UA y Envío MQTT
+# Cliente OPC UA y Envío MQTT
 
 Este proyecto consiste en un cliente desarrollado en Node.js que se conecta a un servidor OPC UA para leer variables específicas y enviarlas a un broker MQTT. Es útil para integrar datos provenientes de sistemas basados en OPC UA con aplicaciones que consumen datos a través de MQTT, como Fiware Context Broker.
 
-Descripción
+## Descripción
 El cliente OPC UA establece una conexión con el servidor OPC UA especificado, lee las variables definidas en el archivo de configuración y publica los valores de estas variables en un tema MQTT. El propósito es facilitar la integración de dispositivos y sistemas que utilizan OPC UA con plataformas que consumen datos a través de MQTT, como Fiware Context Broker.
 
-Requisitos
+## Requisitos
 Antes de ejecutar el cliente, asegúrate de tener instalado Node.js en tu sistema. Puedes descargarlo desde nodejs.org.
 
-Configuración
+## Configuración
 Clonar el Repositorio:
 
 bash
