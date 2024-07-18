@@ -4,6 +4,15 @@ const fs = require("fs");
 const path = require("path");
 require('dotenv').config(); // Cargar variables de entorno desde el archivo .env
 
+// Crear un stream para escribir logs en un archivo
+const logStream = fs.createWriteStream(path.join(__dirname, 'logs', 'app.log'), { flags: 'a' });
+
+// Reemplazar console.log para escribir en el archivo de logs
+console.log = function (message) {
+    logStream.write(new Date().toISOString() + ' - ' + message + '\n');
+    process.stdout.write(new Date().toISOString() + ' - ' + message + '\n');
+};
+
 // Leer los mappings desde el archivo JSON usando la ruta del archivo de mapeo desde .env
 const mappingsFilePath = path.join(__dirname, process.env.MAPPINGS_FILE_PATH);
 const mappings = JSON.parse(fs.readFileSync(mappingsFilePath, 'utf8'));

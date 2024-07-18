@@ -1,14 +1,14 @@
 {
   "name": "opcua-mqtt",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "OPCUA Client MQTT",
+  "main": "client-opcua-mqtt.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node client-opcua-mqtt.js"
   },
-  "keywords": [],
+  "keywords": ["OPC_UA, MQTT"],
   "author": "Manuel Muñoz Rodríguez",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
